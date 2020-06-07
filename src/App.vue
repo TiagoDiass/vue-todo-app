@@ -6,8 +6,12 @@
     </h2>
     <div id="toDoList">
       <div class="form">
-        <input type="text" />
-        <button class="btn btn-custom-add">
+        <input
+          type="text"
+          @keyup.enter="newTodo(form.toDoDescription)"
+          v-model="form.toDoDescription"
+        />
+        <button class="btn btn-custom-add" @click="newTodo(form.toDoDescription)">
           <i class="fas fa-plus"></i>
         </button>
       </div>
@@ -16,7 +20,7 @@
         <ul>
           <li v-for="(toDo, index) in toDoList" :key="index">
             <h5>{{ toDo.description }}</h5>
-            <button class="btn btn-danger">
+            <button class="btn btn-danger" @click="toDoList.splice(index, 1)">
               <i class="far fa-trash-alt"></i>
             </button>
           </li>
@@ -27,20 +31,24 @@
 </template>
 
 <script>
-const newTodo = description => ({
-  description,
-  done: false
-});
-
 export default {
   name: "App",
   data: () => ({
-    toDoList: [
-      newTodo("Fazer lição"),
-      newTodo("Trabalho da faculdade"),
-      newTodo("Fazer lição")
-    ]
-  })
+    form: {
+      toDoDescription: ""
+    },
+    toDoList: []
+  }),
+  methods: {
+    newTodo(description) {
+      let newTodo = {
+        description
+      };
+
+      this.toDoList.push(newTodo);
+      this.form.toDoDescription = "";
+    }
+  }
 };
 </script>
 
