@@ -1,4 +1,4 @@
-# vue-todo-app
+# vue-todo-app (under development!)
 
 ## Project setup
 ```
