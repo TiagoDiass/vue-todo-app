@@ -1,24 +1,7 @@
-# vue-todo-app (under development!)
+# Vue.js To Do App :heavy_check_mark:
 
-## Project setup
-```
-yarn install
-```
+![](preview.gif)
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+This is a little app that I've developed with the aim of fixing knowledge about Vue.js<br>
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### [Click here to check the final result running on Heroku](https://vue-todo-app-by-tiago.herokuapp.com/)
